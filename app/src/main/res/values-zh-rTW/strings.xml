@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">比拚</string>
+
+    <string name="global_spinner_please_select">請選擇</string>
+    <string name="fragment_splash_screen_page_welcome">歡迎使用</string>
+    <string name="fragment_main_textView_price">預算</string>
+    <string name="fragment_main_textView_Requirement">需求</string>
+
+    <string name="dialog_title_error">錯誤</string>
+
+    <string-array name="fragment_main_spinner_name">
+        <item>PhotoShop</item>
+        <item>遊戲</item>
+        <item>寫程式</item>
+        <item>文書</item>
+    </string-array>
+
+    <string name="fragment_main_button_start">開始裝配</string>
+    <string name="fragment_main_spinner_floatingLable">需求</string>
+    <string name="fragment_main_editText_onlyInteger">限定數字!</string>
+    <string name="fragment_main_editText_confirm">我知道了!</string>
+    <string name="fragment_main_editText_overNumberCount">超過數字量!</string>
+
+    <string name="toolBarSetting">設定</string>
+    <string name="openDrawer">開</string>
+    <string name="closeDrawer">關</string>
+</resources>

@@ -1,12 +1,75 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$PlaceholderFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <TextView android:id="@+id/section_label" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="80dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_main_editText_price"
+            android:inputType="phone"
+            android:focusableInTouchMode="true"
+            app:met_autoValidate="true"
+            app:met_helperTextAlwaysShown="false"
+            android:textSize="40dp"
+            app:met_maxCharacters="5"
+            app:met_singleLineEllipsis="true"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="@string/fragment_main_textView_price"
+            app:met_underlineColor="#000000"
+            app:met_floatingLabelTextColor="#000000"
+            app:met_textColor="#0056d3"
+            app:met_primaryColor="#0056d3"
+            app:met_floatingLabelTextSize="20sp"
+            app:met_floatingLabelAlwaysShown="true"
+            android:digits="1234567890"/>
+
+        <!--<Spinner-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/fragment_main_spinner_requirement"-->
+            <!--android:layout_column="1" />-->
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/fragment_main_spinner_requirement"
+            app:ms_multiline="false"
+            app:ms_arrowColor="#0000FF"
+            app:ms_arrowSize="16dp"
+            app:ms_alignLabels="false"
+            app:ms_floatingLabelText="@string/fragment_main_spinner_floatingLable"
+            app:ms_floatingLabelColor="@color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:transitionGroup="false" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/fragment_main_button_start"
+            android:layout_width="206dp"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            android:text="@string/fragment_main_button_start"
+            android:layout_gravity="center_horizontal|top" />
+    </FrameLayout>
+
+</LinearLayout>

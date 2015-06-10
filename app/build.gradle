@@ -5,9 +5,9 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "tw.iecs.aoop.bipin"
-        minSdkVersion 19
-        targetSdkVersion 21
+        applicationId "andycheung.baseproject"
+        minSdkVersion 16
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -17,9 +17,56 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "buildType", "\"release\""
+        }
+        debug {
+            buildConfigField "String", "buildType", "\"debug\""
+        }
+    }
+
+    productFlavors {
+        gt_uat {
+            buildConfigField "String", "productFlavor", "\"own_uat\""
+            manifestPlaceholders = [appName: "Own-UAT"]
+            applicationId "baseproject.own.uat"
+        }
+        oc_sit {
+            buildConfigField "String", "productFlavor", "\"client_sit\""
+            manifestPlaceholders = [appName: "Client-SIT"]
+            applicationId "baseproject.client.sit"
+        }
+        oc_uat{
+            buildConfigField "String", "productFlavor", "\"client_uat\""
+            manifestPlaceholders = [appName: "Client-UAT"]
+            applicationId "baseproject.client.uat"
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.1.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.android.support:support-v4:22.1.+'
+    compile 'com.balysv.materialmenu:material-menu:1.5.4'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+    compile project(':volley')
+    compile 'cn.pedant.sweetalert:library:1.3'
+    compile 'com.github.ganfra:material-spinner:1.1.0'
+    compile 'com.ikimuhendis:ldrawer:0.1'
+    compile 'it.neokree:MaterialNavigationDrawer:1.3.3'
+    compile 'de.hdodenhof:circleimageview:1.2.1'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
+
 }
